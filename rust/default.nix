@@ -8,6 +8,7 @@
       overrides = lib.fromTOML (builtins.readFile ./rust-toolchain.toml);
     in
       pkgs.mkShell {
+        name = "rustup environment";
         strictDeps = true;
         nativeBuildInputs = with pkgs; [
           rustup
