@@ -6,7 +6,11 @@
     };
     rust = {
       path = ./devShells/rust;
-      description = "rust/nix env";
+      description = "rust with nix env";
+    };
+    default = {
+      path = ./devShells/default;
+      description = "nix env";
     };
   };
 }
