@@ -7,7 +7,10 @@
       package = pkgs.prek;
       hooks = {
         #---Nix-----------------
-        alejandra.enable = true;
+        alejandra = {
+          enable = true;
+          excludes = ["flake.nix"];
+        };
         deadnix.enable = true;
         statix.enable = true;
         #--------------------
