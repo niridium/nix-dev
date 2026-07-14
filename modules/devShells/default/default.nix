@@ -8,7 +8,16 @@
       shellHook = ''
         ${config.pre-commit.settings.shellHook}
       '';
-      packages = [pkgs.nixd] ++ config.pre-commit.settings.enabledPackages;
+      packages = with pkgs;
+        [
+          nixd
+          # Shell
+          (bats.withLibraries (p: [p.bats-assert p.bats-file p.bats-support]))
+          shellcheck
+          shfmt
+          bash-language-server
+        ]
+        ++ config.pre-commit.settings.enabledPackages;
     };
   };
 }
