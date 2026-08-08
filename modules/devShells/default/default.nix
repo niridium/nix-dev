@@ -17,8 +17,8 @@
           shfmt
           bash-language-server
 
-          clang
           clang-tools
+          clang
         ]
         ++ config.pre-commit.settings.enabledPackages;
     };
