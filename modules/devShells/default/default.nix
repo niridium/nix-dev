@@ -16,6 +16,9 @@
           shellcheck
           shfmt
           bash-language-server
+
+          clang
+          clang-tools
         ]
         ++ config.pre-commit.settings.enabledPackages;
     };
